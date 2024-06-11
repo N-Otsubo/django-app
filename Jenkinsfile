@@ -11,8 +11,7 @@ pipeline {
             steps {
                 script {
                     // リポジトリをクローン
-                    rm -rf django-app
-                    sh 'git clone -b ${GIT_BRANCH} ${GIT_REPO}'
+                    sh 'rm -rm django-app && git clone -b ${GIT_BRANCH} ${GIT_REPO}'
                 }
             }
         }
