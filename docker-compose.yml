@@ -6,4 +6,16 @@ services:
     volumes:
       - ./app/sample_app:/app
     command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - JENKINS_OPTS=--httpPort=8080
 
+volumes:
+  jenkins_home:
