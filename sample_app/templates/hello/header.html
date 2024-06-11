@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">
+      {% block title %}
+      indexページ
+      {% endblock %}
+    </h1>
+
+    {% block contents %}
+    {% endblock %}
+  </div>
+</body>
+</html>
+
